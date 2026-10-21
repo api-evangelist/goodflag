@@ -1,0 +1,29 @@
+generated: '2026-10-20'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhook-events/retrieve-webhook-event
+sources:
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhook-events/retrieve-webhook-event
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhook-events/search-webhook-events
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhooks/retrieve-webhook
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhooks/create-global-webhook
+description: Goodflag webhook events
+events:
+- event: commentCreated
+  description: A comment was created.
+- event: recipientRefused
+  description: A recipient refused the request.
+- event: recipientFinished
+  description: A recipient finished their part.
+- event: workflowStarted
+  description: A workflow was started.
+- event: workflowStopped
+  description: A workflow was stopped.
+- event: workflowFinished
+  description: A workflow was finished.
+- event: coManagerRemoved
+  description: A co‑manager was removed.
+- event: coManagerAdded
+  description: A co‑manager was added.
+delivery: {}
+docs: https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/webhook-events/retrieve-webhook-event

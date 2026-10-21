@@ -1,0 +1,34 @@
+generated: '2026-10-20'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.goodflag.com/accueil/changelog/2026/9/29.md
+sources:
+- https://docs.goodflag.com/accueil/changelog/2026/9/29.md
+- https://docs.goodflag.com/accueil/changelog/2026/9/15.md
+- https://docs.goodflag.com/accueil/changelog/2026/9/7.md
+- https://docs.goodflag.com/accueil/changelog
+entries:
+- breaking: false
+  highlights:
+  - Le motif de signature ne prend pas en compte l'attribut country du certificat (LE-1838)
+  - Ce comportement est corrigé. L'anomalie concernait uniquement la version 1.21.3.
+  date: '2026-09-29'
+- breaking: false
+  highlights:
+  - L'obligation de disposition de métadonnées persiste après un rafraîchissement à la création d'un parapheur (LE-1458)
+  - 'Après un rafraîchissement de la page de création d''un parapheur collaboratif, l''obligation de disposition de métadonnées définie par le
+    groupe d''utilisateurs n''était plus appliquée : la sélection devenait optionnelle, les champs de métadonnées disparaissaient et le parapheur
+    pouvait être enregistré sans disposition ni métadonnées obligatoires. Ce comportement est corrigé.'
+  - L'option « Cacher les pièces jointes » s'applique aux signataires de type contact (LE-1470)
+  - 'Lorsque l''option « Cacher les pièces jointes » était cochée sur une étape, les pièces jointes restaient visibles pour les signataires de
+    type contact, alors qu''elles étaient bien masquées pour les signataires de type utilisateur. Ce comportement est corrigé : l''option s''applique
+    désormais de manière identique quel que soit le type de destinataire.'
+  date: '2026-09-15'
+- breaking: false
+  highlights:
+  - Mise à jour des CGUs GSi en 3.3 (LE-1793)
+  - Les conditions générales d'utilisation de GSi passent en version 3.3.
+  date: '2026-09-07'
+current_version: 1.21.4
+note: Versioning scheme follows semantic versioning with three numeric components (major.minor.patch).
+docs: https://docs.goodflag.com/accueil/changelog/2026/9/29.md

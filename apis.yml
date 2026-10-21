@@ -1,23 +1,127 @@
 aid: goodflag
+
 name: Goodflag
-description: 'Goodflag is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://goodflag.com/hubfs/Images/Site%20web/solution-de-signature-electronique-securisee.webp
+
+description: Goodflag provides certified electronic signature solutions approved by ANSSI, offering simple, advanced, and qualified e‑signatures,
+  electronic seals, timestamps, and 2D‑Doc capabilities. Their platform integrates with Microsoft Power Automate and offers APIs for signature
+  and seal services, targeting sectors such as education, public, industry, health, real estate, and finance. Goodflag aims to help businesses
+  embed secure electronic signing into their workflows with flexible deployment options.
+
 url: https://raw.githubusercontent.com/api-evangelist/goodflag/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-20'
+
 modified: '2026-10-20'
+
 tags:
 - Company
-apis: []
+- ElectronicSignature
+- Security
+- API
+- Integration
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Support
+  url: https://help.goodflag.com/portal/fr/myarea
+- type: Documentation
+  url: https://docs.goodflag.com/
+- type: Spectral
+  url: rules/goodflag-rules.yml
+- type: JSONLD
+  url: json-ld/goodflag-context.jsonld
+- type: Vocabulary
+  url: vocabulary/goodflag-vocabulary.yml
+- type: Webhooks
+  url: asyncapi/goodflag-webhooks.yml
+- type: DataModel
+  url: data-model/goodflag-data-model.yml
+- type: ChangeLog
+  url: changelog/goodflag-changelog.yml
+- type: Idempotency
+  url: conventions/goodflag-conventions.yml
+- type: Conventions
+  url: conventions/goodflag-conventions.yml
+- type: Conformance
+  url: conformance/goodflag-conformance.yml
+- type: LLMsTxt
+  url: llms/goodflag-llms.txt
+- type: WellKnown
+  url: well-known/goodflag-well-known.yml
+- type: Hosts
+  url: hosts/goodflag-hosts.yml
+- type: Vendors
+  url: vendors/goodflag-vendors.yml
+- type: StatusPage
+  url: https://status.goodflag.com/
+- type: ChangeLog
+  url: https://docs.goodflag.com/accueil/changelog
+- type: DomainSecurity
+  url: security/goodflag-domain-security.yml
 - type: Website
   url: https://goodflag.com/
+- type: APIReference
+  url: https://goodflag.com/api
+- type: Blog
+  url: https://goodflag.com/blog
+- type: Pricing
+  url: https://goodflag.com/tarifs-signature-electronique
+- type: SignUp
+  url: https://goodflag.com/demande-renseignement
+- type: Postman
+  url: https://www.postman.com/goodflag/workspace
+
+apis:
+- aid: goodflag:goodflag-api
+  name: Goodflag API
+  description: 'Goodflag API as documented publicly: 14 operations. Contract generated from the documentation by API Evangelist (2026-10-20);
+    not the provider''s own document.'
+  humanURL: https://docs.goodflag.com/rm/api-reference/documentation-api/get-version
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/goodflag-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/goodflag-post-lp7-signbox-request-schema.json
+  - type: JSONSchema
+    url: json-schema/goodflag-post-api-logs-exports-response-schema.json
+  - type: JSONSchema
+    url: json-schema/goodflag-post-lp7-signbox-pki-sendmessage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/goodflag-post-lp7-signbox-pki-createcertificate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/goodflag-post-lp7-signbox-response-schema.json
+  - type: JSONSchema
+    url: json-schema/goodflag-post-lp7-signbox-pki-sendotp-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The provider's API reference page https://goodflag.com/api returns HTML with no machine‑readable OpenAPI, GraphQL, AsyncAPI, gRPC or
+    WSDL specifications.
+  evidence:
+  - url: https://goodflag.com/api
+    status: 200
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

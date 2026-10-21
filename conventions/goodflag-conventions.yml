@@ -1,0 +1,30 @@
+generated: '2026-10-20'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/retrieve-access-token
+sources:
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/retrieve-access-token
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/create-access-token
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/update-access-token
+- https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/search-access-tokens
+idempotency:
+  coverage: partial
+  header: If-Match
+  evidence: PATCH endpoint requires If-Match header for optimistic concurrency control; other write operations (POST) have no idempotency key.
+  scope:
+  - not enumerated on the pages read
+pagination:
+  style: page-index based
+  params:
+  - pageIndex
+  - itemsPerPage
+  - sortBy
+  - sortOrder
+  response_fields:
+  - pageIndex
+  - itemsPerPage
+  - totalItems
+  - items
+authentication: Bearer token via Authorization header
+note: Fields set to null indicate the documentation does not specify that convention.
+docs: https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/access-tokens/retrieve-access-token

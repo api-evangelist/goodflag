@@ -1,0 +1,16 @@
+generated: '2026-10-20'
+method: none
+source:
+- https://zapier.com/apps/goodflag/integrations
+- https://n8n.io/integrations/goodflag/
+- https://composio.dev/toolkits/goodflag
+- https://monid.ai/tools/goodflag
+checked:
+- https://composio.dev/toolkits/goodflag
+- https://monid.ai/tools/goodflag
+- https://n8n.io/integrations/goodflag/
+- https://zapier.com/apps/goodflag/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

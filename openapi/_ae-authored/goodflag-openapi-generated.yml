@@ -1,0 +1,555 @@
+openapi: 3.1.0
+info:
+  title: Goodflag API
+  version: '2026-10-20'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-20: 14 operation(s) read from 14 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Goodflag has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 12
+    documentation: 2
+    pages-with-code: 13
+    pages-read: 14
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-20'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.goodflag.com/rm/api-reference/documentation-api/get-version
+  - https://docs.goodflag.com/wm/api-reference/documentation-api/get-version
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/send-otp
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/remove-key
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/sign
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/send-message
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/change-password
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/check-key
+  - https://docs.goodflag.com/2d-doc/api-reference/documentation-api/soap/handle-soap-request
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/remote-sign
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/create-certificate
+  - https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/revoke-certificate
+  - https://docs.goodflag.com/rm/api-reference/documentation-api/cle-api/requests/start-request
+  - https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/logs/export-logs
+paths:
+  /LP2DDocBoxCreatorService/LP2DDocBoxCreatorBean:
+    post:
+      operationId: post_LP2DDocBoxCreatorService_LP2DDocBoxCreatorBean
+      tags:
+      - Lp2Ddocboxcreatorservice
+      summary: Point d’entrée SOAP. Accepte une enveloppe SOAP portant une DataZoneRequest, une DataZoneSignatureRequest ou une Image2DDocRequest
+        et renvoie la réponse correspondante.
+      x-source: https://docs.goodflag.com/2d-doc/api-reference/documentation-api/soap/handle-soap-request
+      responses:
+        '204':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /LP7SignBox:
+    post:
+      operationId: post_LP7SignBox
+      tags:
+      - Lp7Signbox
+      summary: Signer des documents
+      description: Signe un ou plusieurs documents avec une clé détenue par le serveur ou fournie sous forme de fichier PKCS#12, selon le profil
+        de signature sélectionné. Retourne le document signé sous forme de preuve (evidence object).
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/sign
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLp7SignboxRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxResponse'
+      x-evidence:
+        kind: documentation
+  /LP7SignBox/pki/changePassword:
+    post:
+      operationId: post_LP7SignBox_pki_changePassword
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/changePassword
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/change-password
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiChangepasswordResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/changePassword \ -H " Content-Type: application/json " \ -d
+          '' { "keyReference": { "reference": "8F2A61C0D94B7E3A55F1C2D8B6A0E9F4C3D2B1A0", "authToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4RjJBNjFDMCJ9.QmxhY2tzdG9uZQ",
+          "password": "482913", "transactionId": "tx-7c9e6679-7425-40de-944b-e07fc1f90ae7" }, "password": "735021", "requestID": "'
+  /LP7SignBox/pki/createCertificate:
+    post:
+      operationId: post_LP7SignBox_pki_createCertificate
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/createCertificate
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/create-certificate
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiCreatecertificateResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/createCertificate \ -H " Content-Type: application/json " \
+          -d '' { "certificationRequestInfo": { "signatureActivationProtocol": "OTP", "validityPeriod": 60, "transactionId": "tx-7c9e6679-7425-40de-944b-e07fc1f90ae7",
+          "PKCS10": { "attributes": { "subscriber": { "emailAddress": "marie.dupont@example.com", "phoneNumber": "+33612345678" }'
+  /LP7SignBox/pki/removeKey:
+    post:
+      operationId: post_LP7SignBox_pki_removeKey
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/removeKey
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/remove-key
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiRemovekeyResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/removeKey \ -H " Content-Type: application/json " \ -d '' {
+          "keyReference": { "reference": "8F2A61C0D94B7E3A55F1C2D8B6A0E9F4C3D2B1A0", "authToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4RjJBNjFDMCJ9.QmxhY2tzdG9uZQ",
+          "password": "735021", "transactionId": "tx-7c9e6679-7425-40de-944b-e07fc1f90ae7" }, "requestID": "remove-2026-09-11-0001" } '''
+  /LP7SignBox/pki/revokeCertificate:
+    post:
+      operationId: post_LP7SignBox_pki_revokeCertificate
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/revokeCertificate
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/revoke-certificate
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiRevokecertificateResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/revokeCertificate \ -H " Content-Type: application/json " \
+          -d '' { "certificate": "MIIFkzCCA3ugAwIBAgIIZ8p6L2Q5TmEwDQYJKoZIhvcNAQELBQAwYzELMAkGA1UEBhMCRlIxFDASBgNVBAoMC0xleCBQZXJzb25hMRcwFQYDVQQLDA4wMDAyIDQ4MDYyMjI1NzElMCMGA1UEAwwcU3VubnlzdGFtcCBOYXR1cmFsIFBlcnNvbnMgQ0E=",
+          "requestID": "revoke-2026-09-11-0001", "password": "482913", "'
+  /LP7SignBox/pki/sendMessage:
+    post:
+      operationId: post_LP7SignBox_pki_sendMessage
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/sendMessage
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/send-message
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiSendmessageResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/sendMessage \ -H " Content-Type: application/json " \ -d ''
+          { "message": "Votre code de signature est 482913. Il est valable 10 minutes.", "keyReferenceId": "8F2A61C0D94B7E3A55F1C2D8B6A0E9F4C3D2B1A0",
+          "requestID": "msg-2026-09-11-0001", "subscriber": { "emailAddress": "marie.dupont@example.com", "phoneNumber": "+33612345678" } } ''
+          Essa'
+  /LP7SignBox/pki/sendOTP:
+    post:
+      operationId: post_LP7SignBox_pki_sendOTP
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/pki/sendOTP
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/pki/send-otp
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxPkiSendotpResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/pki/sendOTP \ -H " Content-Type: application/json " \ -d '' { "action":
+          "SIGN", "signerData": { "digest": [ { "id": "contract", "digestAlgOID": "2.16.840.1.101.3.4.2.1", "digestValue": "n4bQgYhMfWWaL+qgxVrQFaO/TxsrC4Is0V1sFbDwCgg="
+          } ] }, "keyReference": "8F2A61C0D94B7E3A55F1C2D8B6A0E9F4C3D2B1A0", "requestID": "otp-2026-09-11-0001" } '' Ess'
+  /LP7SignBox/signature/checkKey:
+    post:
+      operationId: post_LP7SignBox_signature_checkKey
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/signature/checkKey
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/check-key
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxSignatureCheckkeyResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/signature/checkKey \ -H " Content-Type: application/json " \ -d
+          '' { "keyReference": { "reference": "007AD08A9E5732BE18CC58CCA4B6DA88712402A6", "password": "1234" }, "requestID": "check-2026-09-11-0001"
+          } '' Essayer 200 Signature_checkKey_example { " result " : { " resultMajor " : 0 , " resultMinor " : 0 , " resultMessage " : " OK "
+          } , " r'
+  /LP7SignBox/signature/remoteSign:
+    post:
+      operationId: post_LP7SignBox_signature_remoteSign
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/signature/remoteSign
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/remote-sign
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxSignatureRemotesignResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/signature/remoteSign \ -H " Content-Type: application/json " \ -d
+          '' { "signatureThreadId": "5f1c2d8b-6a0e-49f4-8c3d-2b1a0e9f4c3d", "signatureValues": { "signatureValueMapping": [ { "id": "contract",
+          "signatureValue": "X+z66FjWQp4mgkHQA/iZnwByhJAUqCz3yH3l6p38CdlCqm8GeNvowcz4e7VmmpGL18vnYalFx96botCWaRruBNhnQYPn5hftjOdiA28Kefw9iheZmwBve5oNQR'
+  /LP7SignBox/signature/sign:
+    post:
+      operationId: post_LP7SignBox_signature_sign
+      tags:
+      - Lp7Signbox
+      summary: POST /LP7SignBox/signature/sign
+      x-source: https://docs.goodflag.com/cachetage/api-reference/documentation-api/signature/sign
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLp7SignboxSignatureSignResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://lp7signbox.example.com/LP7SignBox/signature/sign \ -H " Content-Type: application/json " \ -d '' {
+          "inputDocuments": { "inputDocument": [ { "document": { "ID": "2", "fileName": "text.txt", "mimeType": "text/plain", "plainData": { "plainValue":
+          "dGVzdA==" } } } ] }, "parameters": { "LP7Signature": { "timeStamp": { "URLSource": "CLIENT", "clientURL": [ "http://tsa.sunnystamp'
+  /api/logs/exports:
+    post:
+      operationId: post_api_logs_exports
+      tags:
+      - Api
+      summary: POST /api/logs/exports
+      x-source: https://docs.goodflag.com/wm/api-reference/documentation-api/token-portail/logs/export-logs
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiLogsExportsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://workflow-manager/api/logs/exports \ -H " Authorization: Bearer <token> " \ -H " Content-Type: application/json
+          " \ -d '' { "contentType": "text/csv", "beforeItems": "", "afterItems": "", "betweenItems": "\n", "itemTemplate": "{{id}},{{operation}},{{json
+          variables}}", "expired": 1782908277259 } '' Essayer 200 Requête réussie. { " created " : 1782821877261 , " exportOperation'
+  /api/requests/requestId/start:
+    post:
+      operationId: post_api_requests_requestId_start
+      tags:
+      - Api
+      summary: POST /api/requests/requestId/start
+      x-source: https://docs.goodflag.com/rm/api-reference/documentation-api/cle-api/requests/start-request
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiRequestsRequestidStartResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -X POST https://request-manager/api/requests/requestId/start \ -H " Authorization: <apiKey> " \ -H " Content-Type:
+          application/x-www-form-urlencoded " Essayer 200 Requête réussie. { " consentPageUrl " : " https://evidence-manager.lex-persona.com/?requestToken=eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6IjAxIiwiY29uc2VudFZlcnNpb24iOiJWMiIsInNhbHQiOiJ5MlJFK3p5dyIsInJtVmVyc2...#requestId=req_01_PH'
+  /api/version:
+    get:
+      operationId: get_api_version
+      tags:
+      - Api
+      summary: GET /api/version
+      x-source: https://docs.goodflag.com/rm/api-reference/documentation-api/get-version
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl curl https://request-manager/api/version Essayer 200 Requête réussie. \" sgs-rm-webapp:1.21.0 \" Renvoie la version de\
+          \ l’application. \n Authentification Aucune (route publique). Réponse La chaîne de version de l’application. Cette page a-t-elle été\
+          \ utile ? Oui Non Précédent Infrastructure Suivant Consulter la personnalisation d'un client Construit avec DesktopMenu) --> API Reference\
+          \ Guides Jour"
+components:
+  schemas:
+    PostLp7SignboxRequest:
+      type: object
+      properties:
+        inputDocuments:
+          type: object
+          description: Les contenus à signer.
+        parameters:
+          type: object
+          description: Le paramétrage de la signature.
+        signingKey:
+          type: object
+          description: Le paramétrage de la clé de signature.
+        optionalInputs:
+          type: object
+          description: Les paramètres optionnels du traitement de la requête.
+        requestID:
+          type: string
+          description: L’identifiant de la requête, choisi par l’appelant. Renvoyé tel quel dans la réponse.
+      required:
+      - inputDocuments
+      - parameters
+      - signingKey
+    PostLp7SignboxResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          description: Les codes et le message de retour du serveur.
+        evidenceObject:
+          type: object
+          description: La preuve (document signé) produite par l’opération.
+        requestID:
+          type: string
+          description: L’identifiant de la requête, choisi par l’appelant. Renvoyé tel quel dans la réponse.
+        optionalOutputs:
+          type: object
+          description: Les sorties optionnelles.
+    PostLp7SignboxPkiChangepasswordResponse:
+      type: object
+      properties:
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+        ' requestID ':
+          type: string
+    PostLp7SignboxPkiCreatecertificateResponse:
+      type: object
+      properties:
+        ' keyReference ':
+          type: object
+          properties:
+            ' reference ':
+              type: string
+            ' authToken ':
+              type: string
+            ' password ':
+              type: string
+            ' transactionId ':
+              type: string
+        ' certificate ':
+          type: string
+        ' requestID ':
+          type: string
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+        ' name ':
+          type: string
+        ' certificateFormat ':
+          type: string
+    PostLp7SignboxPkiRemovekeyResponse:
+      type: object
+      properties:
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+        ' requestID ':
+          type: string
+    PostLp7SignboxPkiRevokecertificateResponse:
+      type: object
+      properties:
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+        ' requestID ':
+          type: string
+        ' date ':
+          type: integer
+    PostLp7SignboxPkiSendmessageResponse:
+      type: object
+      properties:
+        ' requestID ':
+          type: string
+        ' senderResponses ':
+          type: object
+          properties:
+            ' senderResponse ':
+              type: array
+              items:
+                type: object
+                properties:
+                  ' date ':
+                    type: integer
+                  ' responseCode ':
+                    type: string
+                  ' url ':
+                    type: string
+                  ' messageID ':
+                    type: string
+                  ' freeText ':
+                    type: string
+                  ' ID ':
+                    type: string
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+    PostLp7SignboxPkiSendotpResponse:
+      type: object
+      properties:
+        ' requestID ':
+          type: string
+        ' password ':
+          type: string
+        ' result ':
+          type: object
+          properties:
+            ' minorCode ':
+              type: integer
+            ' majorCode ':
+              type: integer
+            ' message ':
+              type: string
+    PostLp7SignboxSignatureCheckkeyResponse:
+      type: object
+      properties:
+        ' result ':
+          type: object
+          properties:
+            ' resultMajor ':
+              type: integer
+            ' resultMinor ':
+              type: integer
+            ' resultMessage ':
+              type: string
+        ' requestID ':
+          type: string
+    PostLp7SignboxSignatureRemotesignResponse:
+      type: object
+      properties:
+        ' resultMajor ':
+          type: integer
+        ' resultMinor ':
+          type: integer
+        ' resultMessage ':
+          type: string
+    PostLp7SignboxSignatureSignResponse:
+      type: object
+      properties:
+        ' resultMajor ':
+          type: integer
+        ' resultMinor ':
+          type: integer
+        ' resultMessage ':
+          type: string
+    PostApiLogsExportsResponse:
+      type: object
+      properties:
+        ' created ':
+          type: integer
+        ' exportOperation ':
+          type: string
+        ' id ':
+          type: string
+        ' searchQuery ':
+          type: string
+        ' size ':
+          type: integer
+        ' tenantId ':
+          type: string
+        ' totalItems ':
+          type: integer
+        ' updated ':
+          type: integer
+        ' afterItems ':
+          type: string
+        ' beforeItems ':
+          type: string
+        ' betweenItems ':
+          type: string
+        ' contentType ':
+          type: string
+        ' expired ':
+          type: integer
+        ' itemTemplate ':
+          type: string
+        ' jobOperation ':
+          type: string
+        ' userId ':
+          type: string
+    PostApiRequestsRequestidStartResponse:
+      type: object
+      properties:
+        ' consentPageUrl ':
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Lp2Ddocboxcreatorservice
+- name: Lp7Signbox

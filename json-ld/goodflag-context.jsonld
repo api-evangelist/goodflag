@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@vocab": "https://goodflag.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "goodflag": "https://goodflag.com/schema#",
+    "PostLp7SignboxRequest": "goodflag:PostLp7SignboxRequest",
+    "inputDocuments": {
+      "@id": "goodflag:inputDocuments"
+    },
+    "parameters": {
+      "@id": "goodflag:parameters"
+    },
+    "signingKey": {
+      "@id": "goodflag:signingKey"
+    },
+    "optionalInputs": {
+      "@id": "goodflag:optionalInputs"
+    },
+    "requestID": {
+      "@id": "goodflag:requestID",
+      "@type": "xsd:string"
+    },
+    "PostLp7SignboxResponse": "goodflag:PostLp7SignboxResponse",
+    "result": {
+      "@id": "goodflag:result"
+    },
+    "evidenceObject": {
+      "@id": "goodflag:evidenceObject"
+    },
+    "optionalOutputs": {
+      "@id": "goodflag:optionalOutputs"
+    },
+    "PostLp7SignboxPkiChangepasswordResponse": "goodflag:PostLp7SignboxPkiChangepasswordResponse",
+    "PostLp7SignboxPkiCreatecertificateResponse": "goodflag:PostLp7SignboxPkiCreatecertificateResponse",
+    "PostLp7SignboxPkiRemovekeyResponse": "goodflag:PostLp7SignboxPkiRemovekeyResponse",
+    "PostLp7SignboxPkiRevokecertificateResponse": "goodflag:PostLp7SignboxPkiRevokecertificateResponse",
+    "PostLp7SignboxPkiSendmessageResponse": "goodflag:PostLp7SignboxPkiSendmessageResponse",
+    "PostLp7SignboxPkiSendotpResponse": "goodflag:PostLp7SignboxPkiSendotpResponse",
+    "PostLp7SignboxSignatureCheckkeyResponse": "goodflag:PostLp7SignboxSignatureCheckkeyResponse",
+    "PostLp7SignboxSignatureRemotesignResponse": "goodflag:PostLp7SignboxSignatureRemotesignResponse",
+    "PostLp7SignboxSignatureSignResponse": "goodflag:PostLp7SignboxSignatureSignResponse",
+    "PostApiLogsExportsResponse": "goodflag:PostApiLogsExportsResponse",
+    "PostApiRequestsRequestidStartResponse": "goodflag:PostApiRequestsRequestidStartResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Goodflag API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Goodflag's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-20) from openapi/_ae-authored/goodflag-openapi-generated.yml.",
+  "dcterms:created": "2026-10-20",
+  "dcterms:source": [
+    "openapi/_ae-authored/goodflag-openapi-generated.yml"
+  ]
+}

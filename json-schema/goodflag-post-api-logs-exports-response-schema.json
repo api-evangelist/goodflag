@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/goodflag/main/json-schema/goodflag-post-api-logs-exports-response-schema.json",
+  "title": "PostApiLogsExportsResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostApiLogsExportsResponse",
+  "type": "object",
+  "properties": {
+    " created ": {
+      "type": "integer"
+    },
+    " exportOperation ": {
+      "type": "string"
+    },
+    " id ": {
+      "type": "string"
+    },
+    " searchQuery ": {
+      "type": "string"
+    },
+    " size ": {
+      "type": "integer"
+    },
+    " tenantId ": {
+      "type": "string"
+    },
+    " totalItems ": {
+      "type": "integer"
+    },
+    " updated ": {
+      "type": "integer"
+    },
+    " afterItems ": {
+      "type": "string"
+    },
+    " beforeItems ": {
+      "type": "string"
+    },
+    " betweenItems ": {
+      "type": "string"
+    },
+    " contentType ": {
+      "type": "string"
+    },
+    " expired ": {
+      "type": "integer"
+    },
+    " itemTemplate ": {
+      "type": "string"
+    },
+    " jobOperation ": {
+      "type": "string"
+    },
+    " userId ": {
+      "type": "string"
+    }
+  }
+}

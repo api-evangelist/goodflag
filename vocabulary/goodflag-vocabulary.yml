@@ -1,0 +1,93 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/goodflag-openapi-generated.yml
+vocabulary:
+  name: Goodflag Domain Vocabulary
+  description: 'Terms declared by Goodflag''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-21'
+  terms:
+  - term: PostLp7SignboxRequest
+    definition: 'Object declared by the contract with fields: inputDocuments, parameters, signingKey, optionalInputs, requestID.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxRequest
+  - term: PostLp7SignboxResponse
+    definition: 'Object declared by the contract with fields: result, evidenceObject, requestID, optionalOutputs.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxResponse
+  - term: PostLp7SignboxPkiChangepasswordResponse
+    definition: 'Object declared by the contract with fields:  result ,  requestID .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiChangepasswordResponse
+  - term: PostLp7SignboxPkiCreatecertificateResponse
+    definition: 'Object declared by the contract with fields:  keyReference ,  certificate ,  requestID ,  result ,  name ,  certificateFormat
+      .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiCreatecertificateResponse
+  - term: PostLp7SignboxPkiRemovekeyResponse
+    definition: 'Object declared by the contract with fields:  result ,  requestID .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiRemovekeyResponse
+  - term: PostLp7SignboxPkiRevokecertificateResponse
+    definition: 'Object declared by the contract with fields:  result ,  requestID ,  date .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiRevokecertificateResponse
+  - term: PostLp7SignboxPkiSendmessageResponse
+    definition: 'Object declared by the contract with fields:  requestID ,  senderResponses ,  result .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiSendmessageResponse
+  - term: PostLp7SignboxPkiSendotpResponse
+    definition: 'Object declared by the contract with fields:  requestID ,  password ,  result .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiSendotpResponse
+  - term: PostLp7SignboxSignatureCheckkeyResponse
+    definition: 'Object declared by the contract with fields:  result ,  requestID .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxSignatureCheckkeyResponse
+  - term: PostLp7SignboxSignatureRemotesignResponse
+    definition: 'Object declared by the contract with fields:  resultMajor ,  resultMinor ,  resultMessage .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxSignatureRemotesignResponse
+  - term: PostLp7SignboxSignatureSignResponse
+    definition: 'Object declared by the contract with fields:  resultMajor ,  resultMinor ,  resultMessage .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxSignatureSignResponse
+  - term: PostApiLogsExportsResponse
+    definition: 'Object declared by the contract with fields:  created ,  exportOperation ,  id ,  searchQuery ,  size ,  tenantId ,  totalItems
+      ,  updated ,  afterItems ,  beforeItems ,  betweenItems ,  contentType . (4 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostApiLogsExportsResponse
+  - term: PostApiRequestsRequestidStartResponse
+    definition: 'Object declared by the contract with fields:  consentPageUrl .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostApiRequestsRequestidStartResponse
+  - term: Lp2Ddocboxcreatorservice
+    definition: 'Resource group in the contract; its operation POST /LP2DDocBoxCreatorService/LP2DDocBoxCreatorBean: Point d’entrée SOAP.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml
+  - term: Lp7Signbox
+    definition: 'Resource group in the contract; its operation POST /LP7SignBox: Signe un ou plusieurs documents avec une clé détenue par le serveur
+      ou fournie sous forme de fichier PKCS#12, selon le profil de signature sélectionné.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml
+  - term: Api
+    definition: 'Resource group in the contract; its operation POST /api/logs/exports: POST /api/logs/exports'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/goodflag-openapi-generated.yml

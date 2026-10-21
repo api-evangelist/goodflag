@@ -1,0 +1,32 @@
+# Goodflag Docs
+
+> Signature électronique, cachetage et 2D-Doc par API, pour les éditeurs de logiciels, les intégrateurs et les développeurs.
+
+## Instructions for AI Agents
+
+- For clean Markdown of any page, append `.md` to the page URL
+- For section-specific indexes, append `/llms.txt` to any section URL
+- For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.goodflag.com/_mcp/server
+
+## Products
+
+- [Accueil](https://docs.goodflag.com/accueil/llms.txt)
+  - [Overview](https://docs.goodflag.com/accueil/overview.md)
+  - [September 29, 2026](https://docs.goodflag.com/accueil/changelog/2026/9/29.md)
+  - [September 29, 2026](https://docs.goodflag.com/accueil/changelog/2026/9/29.md)
+  - [September 15, 2026](https://docs.goodflag.com/accueil/changelog/2026/9/15.md)
+  - [September 7, 2026](https://docs.goodflag.com/accueil/changelog/2026/9/7.md)
+- [Workflow Manager (WM)](https://docs.goodflag.com/wm/llms.txt): Provisionnez des parapheurs de signature électronique
+  - [Introduction](https://docs.goodflag.com/wm/latest/api-reference/introduction.md)
+  - [Infrastructure](https://docs.goodflag.com/wm/latest/api-reference/infrastructure.md)
+  - [Structure](https://docs.goodflag.com/wm/latest/api-reference/structure.md)
+  - [Authentification](https://docs.goodflag.com/wm/latest/api-reference/authentification.md)
+  - [Groupes, rôles et droits](https://docs.goodflag.com/wm/latest/api-reference/concepts/groupes-roles-droits.md)
+- [Request Manager (RM)](https://docs.goodflag.com/rm/llms.txt): Provisionnez des transactions de signature électronique
+  - [Introduction](https://docs.goodflag.com/rm/latest/api-reference/introduction.md)
+  - [Infrastructure](https://docs.goodflag.com/rm/latest/api-reference/infrastructure.md)
+  - [Créer la requête provisionnée](https://docs.goodflag.com/rm/latest/guides/integration/creer-une-requete-provisionnee.md)
+  - [Rediriger vers la page de consentement](https://docs.goodflag.com/rm/latest/guides/integration/rediriger-vers-la-page-de-consentement.md)
+  - [Suivre l'avancement de la signature](https://docs.goodflag.com/rm/latest/guides/integration/suivre-lavancement-de-la-signature.md)
+- [Goodflag Cachetage](https://docs.goodflag.com/cachetage/llms.txt): Sécurisez vos documents d’entreprise avec le cachet électronique
+- [Goodflag 2D DOC](https://docs.goodflag.com/2d-doc/llms.txt): Luttez contre la fraude documentaire avec Goodflag 2D-Doc

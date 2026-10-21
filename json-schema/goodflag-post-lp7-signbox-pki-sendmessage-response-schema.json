@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/goodflag/main/json-schema/goodflag-post-lp7-signbox-pki-sendmessage-response-schema.json",
+  "title": "PostLp7SignboxPkiSendmessageResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/goodflag-openapi-generated.yml#/components/schemas/PostLp7SignboxPkiSendmessageResponse",
+  "type": "object",
+  "properties": {
+    " requestID ": {
+      "type": "string"
+    },
+    " senderResponses ": {
+      "type": "object",
+      "properties": {
+        " senderResponse ": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              " date ": {
+                "type": "integer"
+              },
+              " responseCode ": {
+                "type": "string"
+              },
+              " url ": {
+                "type": "string"
+              },
+              " messageID ": {
+                "type": "string"
+              },
+              " freeText ": {
+                "type": "string"
+              },
+              " ID ": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    " result ": {
+      "type": "object",
+      "properties": {
+        " minorCode ": {
+          "type": "integer"
+        },
+        " majorCode ": {
+          "type": "integer"
+        },
+        " message ": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
